@@ -110,13 +110,13 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 | 沒有特徵點 | 畫了特徵點 |
 |----------|-----------|
-| ![image](img/tb01.jpg) | ![image](img/tb01_kp.png)  |
+| ![image](https://github.com/Pajace/study_notes/blob/master/open_cv_study_notes/img/tb01.jpg) | ![image](https://github.com/Pajace/study_notes/blob/master/open_cv_study_notes/img/tb01_kp.png)  |
 
 稍微複雜一點的圖，更可以明顯發現只要是明顯轉折的或特徵都會出現特徵點
 
 | 沒有特徵點 | 畫了特徵點 |
 |----------|-----------|
-|![image](img/symmetric-01.jpg) | ![image](img/symmetric-01-kp.png) |
+|![image](https://github.com/Pajace/study_notes/blob/master/open_cv_study_notes/img/symmetric-01.jpg) | ![image](https://github.com/Pajace/study_notes/blob/master/open_cv_study_notes/img/symmetric-01-kp.png) |
 
 上面是使用 **FAST algorithm**, `threshold=10`, `nonmaxSupression=True` 的情況下畫出來的, 不同的參數產生的特徵點數量也會不同，詳細的設定方式可以參考[這裡][feature_points_algorithm_ref]
 
@@ -126,13 +126,13 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 - 對切： 可以分為上下對切，左右對切, 45度角對切。如果要更精確一點還可以每隔5或10度角對切，或做矩正旋轉，不過這太複雜了，目前就先前面三種就好。
 
-    ![cropping-symmetric](img/symmetric-cropping.png)
+    ![cropping-symmetric](https://github.com/Pajace/study_notes/blob/master/open_cv_study_notes/img/symmetric-cropping.png)
 
     接著去判斷有標注和無標注的特徵點數量比例，**理論上來說** 如果是要判斷圖片特徵點是否對稱，對切之後這兩部份的特徵點 `應該` 會很接近。
 
 - 切三份: 關於切三份的切圖方式可以將圖片切成 **N** X **N** 的矩陣，然後再取其需要的部份來計算特徵點。接著在從 2x2, 3x3, ..., NxN 算上去，看哪個的效果較好，再取其 N 的值為最後的預測切法。
 
-    ![cropping-rule-of-third](img/rule-of-third-cropping.png)
+    ![cropping-rule-of-third](https://github.com/Pajace/study_notes/blob/master/open_cv_study_notes/img/rule-of-third-cropping.png)
 
     ```python
     def get_rule_of_third_occupy_range(crop_n):
@@ -196,11 +196,11 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 這裡是利用到他的一個特性: 當理個數值在比例上很接近的時候他的結果就會逼近於 1, 如下圖所示：
 
-![entropy-binary-plot](img/binary_entropy_plot.png)
+![entropy-binary-plot](https://github.com/Pajace/study_notes/blob/master/open_cv_study_notes/img/binary_entropy_plot.png)
 
 他的計算方式如下：
 
-![entropy-e](img/entropy-equ.svg)
+![entropy-e](https://github.com/Pajace/study_notes/blob/master/open_cv_study_notes/img/entropy-equ.svg)
 
 所以正好可以利用他的這個特性來判斷兩個部份的特徵點的比例。
 
