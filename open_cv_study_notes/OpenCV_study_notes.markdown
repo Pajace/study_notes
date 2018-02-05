@@ -200,7 +200,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 他的計算方式如下：
 
-![entropy-e](https://github.com/Pajace/study_notes/blob/master/open_cv_study_notes/img/entropy-equ.svg?raw=true)
+![entropy-e](https://github.com/Pajace/study_notes/blob/master/open_cv_study_notes/img/entropy-equ.svg)
 
 所以正好可以利用他的這個特性來判斷兩個部份的特徵點的比例。
 
